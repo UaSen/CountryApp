@@ -20,7 +20,7 @@ public class Country implements Serializable {
 	//declare private variables
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(nullable = false, updatable = false)
 	private int id;
 	@Column(nullable = false)
