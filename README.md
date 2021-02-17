@@ -4,7 +4,7 @@ This project was generated with Spring Initializer.
 
 ## Step 1: Clone Repository
 
-Switch into the main branch using following command. `git switch main`
+Switch into the dev branch using following command. `git switch dev`
 
 ## Step 2: Open Project in a IDE
 
