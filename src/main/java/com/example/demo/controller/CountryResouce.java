@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +28,7 @@ public class CountryResouce {
 		this.countryService = countryService;
 	}
 
-	@GetMapping("/all")
+	@GetMapping("all")
 	public ResponseEntity<List<Country>> getAllCountries(){
 		
 		List<Country> countries = countryService.getAllCuntries();
@@ -35,17 +36,9 @@ public class CountryResouce {
 		
 	}
 	
-	@GetMapping("find/{id}")
-	public ResponseEntity<Country> getCountryBiId(@PathVariable int id){
-		
-		Country country = countryService.findCountryById(id);
-		return new ResponseEntity<>(country,HttpStatus.OK);
-		
-	}
-	
 	@PostMapping("add")
 	public ResponseEntity<Country> addCountry(@RequestBody Country country){
-		
+
 		Country newCountry = countryService.addCountry(country);
 		return new ResponseEntity<>(newCountry,HttpStatus.OK);
 	}

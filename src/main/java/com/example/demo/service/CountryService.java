@@ -22,32 +22,18 @@ public class CountryService {
 	}
 
 	public Country addCountry(Country country) {
-		
-		
 		return countryRepo.save(country);
-		
 	}
 	
 	public List<Country> getAllCuntries(){
 		return countryRepo.findAll();
 	}
 	
-	public Country updateCountry(Country country) {
-		
-		return countryRepo.save(country);
-		
+	public Country updateCountry(Country country) {	
+		return countryRepo.save(country);	
 	}
-	
-
-	
-	public Country findCountryById(int id) {
-		return countryRepo.findCountryById(id).orElseThrow(() -> new UserNotFoundException("User by id " + id + "was not found"));
-	}
-	
-
-	
-	public void deleteCountry(int id) {
 		
+	public void deleteCountry(int id) {	
 		countryRepo.deleteById(id);
 	}
 }

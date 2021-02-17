@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Country implements Serializable {
+public class Country  implements Serializable {
 	
 	/**
 	 * implements Serializable class
@@ -23,22 +23,33 @@ public class Country implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(nullable = false, updatable = false)
 	private int id;
-	@Column(nullable = false)
+
 	private String countryName;
-	@Column(nullable = false)
+
 	private String continent;
-	@Column(nullable = false)
+
 	private String capital;
-	@Column(nullable = false)
+
 	private String currency;
-	@Column(nullable = false)
+
 	private boolean island;
-	@Column(nullable = false)
+
 	private String imageUrl;
 	
 	//default constructor
 	public Country() {
 		
+	}
+	
+	public Country(String countryName, String continent, String capital, String currency, boolean island,
+			String imageUrl) {
+		super();
+		this.countryName = countryName;
+		this.continent = continent;
+		this.capital = capital;
+		this.currency = currency;
+		this.island = island;
+		this.imageUrl = imageUrl;
 	}
 	
 	//parameterize constructor
